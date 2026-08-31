@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://storage.readdy-site.link">
+  <link rel="preconnect" href="https://readdy.ai">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <title>Recruitment | TNR HR Business Solutions</title>
+  <meta name="description" content="Specialised talent acquisition for specialist, management, and executive positions. Head-hunting, permanent, labour broking, and bulk recruitment across South Africa.">
+  <meta name="keywords" content="recruitment, head-hunting, talent acquisition, labour broking, South Africa, Durban">
+  <link rel="canonical" href="https://tnrhrbs.co.za/recruitment.html">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: { 50: 'oklch(var(--background-50))', 100: 'oklch(var(--background-100))', 200: 'oklch(var(--background-200))', 300: 'oklch(var(--background-300))', 400: 'oklch(var(--background-400))', 500: 'oklch(var(--background-500))', 600: 'oklch(var(--background-600))', 700: 'oklch(var(--background-700))', 800: 'oklch(var(--background-800))', 900: 'oklch(var(--background-900))', 950: 'oklch(var(--background-950))' },
+            primary: { 50: 'oklch(var(--primary-50))', 100: 'oklch(var(--primary-100))', 200: 'oklch(var(--primary-200))', 300: 'oklch(var(--primary-300))', 400: 'oklch(var(--primary-400))', 500: 'oklch(var(--primary-500))', 600: 'oklch(var(--primary-600))', 700: 'oklch(var(--primary-700))', 800: 'oklch(var(--primary-800))', 900: 'oklch(var(--primary-900))', 950: 'oklch(var(--primary-950))' },
+            accent: { 50: 'oklch(var(--accent-50))', 100: 'oklch(var(--accent-100))', 200: 'oklch(var(--accent-200))', 300: 'oklch(var(--accent-300))', 400: 'oklch(var(--accent-400))', 500: 'oklch(var(--accent-500))', 600: 'oklch(var(--accent-600))', 700: 'oklch(var(--accent-700))', 800: 'oklch(var(--accent-800))', 900: 'oklch(var(--accent-900))', 950: 'oklch(var(--accent-950))' },
+            secondary: { 50: 'oklch(var(--secondary-50))', 100: 'oklch(var(--secondary-100))', 200: 'oklch(var(--secondary-200))', 300: 'oklch(var(--secondary-300))', 400: 'oklch(var(--secondary-400))', 500: 'oklch(var(--secondary-500))', 600: 'oklch(var(--secondary-600))', 700: 'oklch(var(--secondary-700))', 800: 'oklch(var(--secondary-800))', 900: 'oklch(var(--secondary-900))', 950: 'oklch(var(--secondary-950))' },
+            foreground: { 50: 'oklch(var(--foreground-50))', 100: 'oklch(var(--foreground-100))', 200: 'oklch(var(--foreground-200))', 300: 'oklch(var(--foreground-300))', 400: 'oklch(var(--foreground-400))', 500: 'oklch(var(--foreground-500))', 600: 'oklch(var(--foreground-600))', 700: 'oklch(var(--foreground-700))', 800: 'oklch(var(--foreground-800))', 900: 'oklch(var(--foreground-900))', 950: 'oklch(var(--foreground-950))' },
+          },
+          fontFamily: { sans: ['var(--font-body)'], heading: ['var(--font-body)'], body: ['var(--font-body)'], label: ['var(--font-label)'] },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header id="main-header" style="position:fixed;top:0;left:0;right:0;z-index:50;background:oklch(var(--background-50) / 0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.10);">
+  <div class="editorial-container">
+    <nav class="flex items-center justify-between h-[56px] md:h-[64px]">
+      <a href="index.html" class="flex-shrink-0 flex items-center" style="margin-right: 2.5rem;">
+        <img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/14e8aa28-81b4-4c25-9661-837e119dd1ba_compressed_TNR_Logo_FullColour_Transparent.webp" alt="TNR HR Business Solutions" class="header-logo h-28 w-auto" fetchpriority="high" width="120" height="40" style="transform-origin: left center;">
+      </a>
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="index.html" class="nav-link text-[0.7rem] font-sans tracking-[0.2em] uppercase text-foreground-800 whitespace-nowrap">Home</a>
+        <div class="relative" style="position:relative;">
+          <a href="services.html" class="nav-link text-[0.7rem] font-sans tracking-[0.15em] uppercase text-foreground-800 hover:text-accent-500 transition-colors whitespace-nowrap flex items-center gap-1" data-dropdown="services-dropdown">Services <i class="ri-arrow-down-s-line text-xs"></i></a>
+          <div id="services-dropdown" class="dropdown-panel">
+            <div class="py-2">
+              <a href="hr-consulting.html" class="block px-4 py-2.5 text-sm text-foreground-700 hover:bg-background-100 hover:text-accent-500 transition-colors">HR Consulting</a>
+              <a href="payroll-services.html" class="block px-4 py-2.5 text-sm text-foreground-700 hover:bg-background-100 hover:text-accent-500 transition-colors">Payroll Services</a>
+              <a href="chairing.html" class="block px-4 py-2.5 text-sm text-foreground-700 hover:bg-background-100 hover:text-accent-500 transition-colors">Chairing of Hearings</a>
+              <a href="recruitment.html" class="block px-4 py-2.5 text-sm text-foreground-700 hover:bg-background-100 hover:text-accent-500 transition-colors">Recruitment</a>
+              <a href="training.html" class="block px-4 py-2.5 text-sm text-foreground-700 hover:bg-background-100 hover:text-accent-500 transition-colors">Training</a>
+            </div>
+          </div>
+        </div>
+        <a href="about.html" class="nav-link text-[0.7rem] font-sans tracking-[0.2em] uppercase text-foreground-800 whitespace-nowrap">About Us</a>
+        <a href="newsletter.html" class="nav-link text-[0.7rem] font-sans tracking-[0.2em] uppercase text-foreground-800 whitespace-nowrap">Newsletter</a>
+        <a href="careers.html" class="nav-link text-[0.7rem] font-sans tracking-[0.2em] uppercase text-foreground-800 whitespace-nowrap">Careers</a>
+        <a href="contact.html" class="nav-link text-[0.7rem] font-sans tracking-[0.2em] uppercase text-foreground-800 whitespace-nowrap">Contact</a>
+        <a href="register.html" class="nav-link text-[0.7rem] font-sans tracking-[0.2em] uppercase text-foreground-800 whitespace-nowrap">Register</a>
+      </div>
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="login.html" class="magnetic-btn text-[0.65rem] font-sans tracking-[0.15em] uppercase px-5 py-2.5 border border-foreground-800 text-foreground-800 hover:bg-foreground-800 hover:text-background-50 transition-colors duration-500 whitespace-nowrap"><i class="ri-user-line mr-1.5"></i>Login</a>
+      </div>
+      <button id="mobile-menu-toggle" class="lg:hidden text-foreground-800 p-2"><i class="ri-menu-line text-xl"></i></button>
+    </nav>
+  </div>
+  <div id="mobile-menu" class="mobile-menu lg:hidden bg-background-50 border-t border-background-200/70">
+    <div class="editorial-container py-6 space-y-4">
+      <a href="index.html" class="block text-[0.75rem] font-sans tracking-[0.15em] uppercase py-2 text-foreground-700">Home</a>
+      <a href="about.html" class="block text-[0.75rem] font-sans tracking-[0.15em] uppercase py-2 text-foreground-700">About Us</a>
+      <a href="services.html" class="block text-sm text-foreground-700 hover:text-accent-500 transition-colors">Services</a>
+      <a href="newsletter.html" class="block text-[0.75rem] font-sans tracking-[0.15em] uppercase py-2 text-foreground-700">Newsletter</a>
+      <a href="careers.html" class="block text-[0.75rem] font-sans tracking-[0.15em] uppercase py-2 text-foreground-700">Careers</a>
+      <a href="contact.html" class="block text-[0.75rem] font-sans tracking-[0.15em] uppercase py-2 text-foreground-700">Contact</a>
+      <a href="register.html" class="block text-[0.75rem] font-sans tracking-[0.15em] uppercase py-2 text-foreground-700">Register</a>
+      <a href="login.html" class="block text-center text-[0.7rem] font-sans tracking-[0.15em] uppercase px-5 py-3 border border-foreground-800 text-foreground-800 hover:bg-foreground-800 hover:text-background-50 transition-colors mt-2"><i class="ri-user-line mr-1.5"></i>Login</a>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ PAGE HERO ═══ -->
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="https://readdy.ai/api/search-image?query=Black%20South%20African%20HR%20recruiter%20interviewing%20a%20candidate%20in%20a%20bright%20modern%20office%2C%20two%20people%20at%20a%20desk%20with%20CV%20documents%2C%20warm%20natural%20light%2C%20professional%20and%20welcoming%20atmosphere%2C%20editorial%20photography%2C%20authentic%20hiring%20scene&width=1600&height=700&seq=recruit-hero-blk-08&orientation=landscape" alt="Recruitment"></div>
+  <div class="page-hero-overlay" style="background:linear-gradient(to bottom,rgba(10,10,20,0.72),rgba(10,10,20,0.60),rgba(10,10,20,0.78));"></div>
+  <div class="page-hero-content">
+    <span style="display:block;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.90);margin-bottom:1rem;text-shadow:0 1px 6px rgba(0,0,0,0.6);">Service Detail</span>
+    <h1 style="font-size:clamp(1.8rem,4vw,3.5rem);color:#ffffff;font-weight:300;line-height:1.2;text-shadow:0 2px 16px rgba(0,0,0,0.7),0 1px 4px rgba(0,0,0,0.5);margin-bottom:1rem;">Recruitment</h1>
+    <p style="font-size:clamp(0.9rem,1.5vw,1.1rem);color:rgba(255,255,255,0.90);max-width:42rem;margin:0 auto;line-height:1.7;text-shadow:0 1px 8px rgba(0,0,0,0.6);">Specialised talent acquisition for specialist, management, and executive positions nationwide.</p>
+  </div>
+</section>
+
+<!-- ═══ CONTENT ═══ -->
+<section class="py-24 md:py-32 bg-background-50">
+  <div class="editorial-container">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+      <div class="reveal">
+        <span class="block text-[0.65rem] font-sans tracking-[0.25em] uppercase text-accent-500 mb-5">Recruitment</span>
+        <div class="reveal-mask"><div class="reveal-inner"><h2 class="font-sans text-2xl md:text-3xl text-foreground-950 font-light mb-6 leading-snug">Finding the Right <em class="italic text-foreground-600">People</em> for the Right Roles</h2></div></div>
+        <p class="reveal reveal-delay-2 text-sm text-foreground-600 leading-[1.9] mb-6">Great organisations are built by great people. Our recruitment services are designed to connect you with candidates who not only have the right skills but also align with your company culture and strategic vision.</p>
+        <p class="reveal reveal-delay-3 text-sm text-foreground-600 leading-[1.9] mb-6">From head-hunting for specialist and executive roles to bulk recruitment for large projects, we offer flexible solutions tailored to your hiring needs across diverse industries.</p>
+        <div class="reveal reveal-delay-4 bg-background-100 p-8 border-l-2 border-accent-500">
+          <p class="text-sm text-foreground-600 leading-relaxed italic">&ldquo;We specialise in Manufacturing, Engineering &amp; Construction, Legal, Financial Services, Telecommunications, and Non-Profit sectors.&rdquo;</p>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1 relative overflow-hidden group">
+        <img src="https://readdy.ai/api/search-image?query=Black%20professionals%20in%20job%20interview%20modern%20office%20setting%20two%20people%20at%20table%20warm%20natural%20light%20authentic%20representation%20black%20owned%20business%20editorial%20photography&width=800&height=600&seq=recruitment-image-001&orientation=landscape&nocache=true" alt="Recruitment Services" class="w-full h-[400px] md:h-[520px] object-cover transition-transform duration-[8s] group-hover:scale-105">
+      </div>
+    </div>
+
+    <!-- Categories -->
+    <div class="mt-20 md:mt-28 space-y-8">
+      <span class="reveal block text-[0.65rem] font-sans tracking-[0.25em] uppercase text-secondary-500 mb-8">Recruitment Solutions</span>
+
+      <div class="reveal bg-background-100 p-8 md:p-10">
+        <h3 class="font-sans text-xl text-foreground-950 font-normal mb-6">Head-Hunting Services</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Suitable for Specialist, Senior, and Executive positions</li>
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Suitable for hard-to-fill or retention-challenged positions</li>
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Suitable for new positions where market knowledge is needed</li>
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Service offered at a 12% placement fee</li>
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>30% of placement fee paid up-front (non-refundable)</li>
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>70% payable within 7 days of start date of successful incumbent</li>
+        </ul>
+      </div>
+
+      <div class="reveal bg-background-100 p-8 md:p-10">
+        <h3 class="font-sans text-xl text-foreground-950 font-normal mb-6">Specialist and Management Recruitment</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Normal recruitment for vacant positions</li>
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Specialised in support and management positions</li>
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Manufacturing, Engineering, Legal, Financial Services, Telecoms, Non-Profit</li>
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Service offered at a 12% placement fee</li>
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Placement fee payable within 7 days of start date</li>
+        </ul>
+      </div>
+
+      <div class="reveal bg-background-100 p-8 md:p-10">
+        <h3 class="font-sans text-xl text-foreground-950 font-normal mb-6">Labour-Broking and Temporary Employment Services</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Suitable for project-based, fixed-term, and casual employment</li>
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>We appoint employees and are responsible for legislative compliance</li>
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Compliance includes employer contributions and leave pay</li>
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Client responsible for health and safety, PPE, and training</li>
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Service fee of 40% per placement, on a monthly basis</li>
+        </ul>
+      </div>
+
+      <div class="reveal bg-background-100 p-8 md:p-10">
+        <h3 class="font-sans text-xl text-foreground-950 font-normal mb-6">Bulk Recruitment</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Suitable for start-up, peak season, internships and learnerships</li>
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Manufacturing, Engineering, Legal, Financial Services, Telecoms, Non-Profit</li>
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Service offered at a 10% placement fee per successful incumbent</li>
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Placement fee payable within 7 days of start date</li>
+        </ul>
+      </div>
+
+      <div class="reveal bg-background-100 p-8 md:p-10">
+        <h3 class="font-sans text-xl text-foreground-950 font-normal mb-6">People-Living-with-Disabilities Recruitment</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Suitable for all positions for inclusion, diversity, EE and B-BBEE compliance</li>
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Manufacturing, Engineering, Legal, Financial Services, Telecoms, Non-Profit</li>
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Service offered at a 10% placement fee</li>
+          <li class="flex items-start gap-3 text-sm text-foreground-600 leading-relaxed"><span class="text-accent-500 flex-shrink-0 mt-0.5">&mdash;</span>Placement fee payable within 7 days of start date</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="relative py-24 md:py-32 overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="https://readdy.ai/api/search-image?query=Black%20recruitment%20team%20collaboration%20modern%20office%20warm%20lighting%20strategic%20planning%20editorial%20photography&width=1600&height=600&seq=recruit-cta-001&orientation=landscape&nocache=true" alt="Team Collaboration" class="w-full h-full object-cover object-center" loading="lazy">
+  </div>
+  <div class="absolute inset-0" style="background: oklch(var(--primary-950) / 0.85);"></div>
+  <div class="absolute inset-0" style="background: linear-gradient(to right, oklch(var(--primary-950) / 0.9), oklch(var(--primary-900) / 0.8), oklch(var(--primary-950) / 0.9));"></div>
+  <div class="editorial-container relative z-10">
+    <div class="text-center max-w-2xl mx-auto">
+      <span class="reveal block text-[0.65rem] font-sans tracking-[0.25em] uppercase text-accent-400 mb-5">Let's Talk</span>
+      <div class="reveal-mask"><div class="reveal-inner"><h2 class="font-sans text-2xl md:text-3xl text-background-50 font-light mb-6">Looking for Exceptional Talent?</h2></div></div>
+      <p class="reveal reveal-delay-2 text-sm text-background-100/70 leading-relaxed mb-10">Whether you need one specialist or an entire team, our recruitment experts are ready to find the right fit for your organisation.</p>
+      <a href="contact.html" class="reveal reveal-delay-3 magnetic-btn inline-block text-[0.7rem] font-sans tracking-[0.2em] uppercase px-12 py-4 bg-primary-500 text-background-50 hover:bg-primary-600 transition-colors duration-500 whitespace-nowrap">Discuss Your Hiring Needs</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUSTED BY ═══ -->
+<section class="py-20 md:py-24 bg-background-100 border-t border-background-200/70 overflow-hidden">
+  <div class="editorial-container mb-12 text-center">
+    <span class="reveal block text-[0.65rem] font-sans tracking-[0.25em] uppercase text-secondary-500 mb-3">Trusted By</span>
+    <div class="reveal-mask"><div class="reveal-inner"><h3 class="font-sans text-xl md:text-2xl text-foreground-950 font-light">Leading Organisations Nationwide</h3></div></div>
+  </div>
+  <div class="relative mb-6">
+    <div class="absolute left-0 top-0 bottom-0 w-20 md:w-32 z-10 bg-gradient-to-r from-background-100 to-transparent pointer-events-none"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-20 md:w-32 z-10 bg-gradient-to-l from-background-100 to-transparent pointer-events-none"></div>
+    <div class="flex animate-marquee whitespace-nowrap">
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/37cc822f-083e-4db1-aec6-128124120165_compressed_Ngcobo-NS-Inc.webp" alt="Ngcobo NS Inc"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/5935cebc-4151-4ba0-892f-8339cd2ecce4_compressed_MIHNEL-Engineers-and-Civils.webp" alt="MIHNEL Engineers and Civils"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/9f7bf669-92bc-4a08-ac33-a4f2bdca2e0b_compressed_ILitha-Labantu-NPO.webp" alt="ILitha Labantu NPO"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/17328e52-30ed-4715-bd04-3f3e67480da8_compressed_Saved-Dreams-NPO.webp" alt="Saved Dreams NPO"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/20831bc1-4a2b-4921-b701-69f878b4b976_compressed_Inkazimulo-Consulting.webp" alt="Inkazimulo Consulting"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/bed86c2b-2259-4d9a-a306-1e65b6754dea_compressed_Brown-Sugar-Restaurant.webp" alt="Brown Sugar Restaurant"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/0d559dfa-5f7e-48a3-9fdc-c0d964651ad4_compressed_MAAKE-Mining-Services.webp" alt="MAAKE Mining Services"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/2cbb0cf5-aff7-4d6b-a345-0a0ed3417b29_compressed_IUA-Business-Solutions-Pty-Ltd.webp" alt="IUA Business Solutions"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><span class="trusted-card-text">Enstra Paper</span></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/0564a997-3dab-4556-8686-c29be3ed7044_compressed_Rusmar-Packaging-Pty-Ltd.webp" alt="Rusmar Packaging"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/1d15a197-7165-43b5-8aae-bbd593ffd2dc_compressed_Computershare.webp" alt="Computershare"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/14cfaccb-3ed0-4312-9309-68555fef8fb3_compressed_Enstra-Paper-Pty-Ltd.webp" alt="Corruseal Group"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/9214d3bf-9061-40b3-919e-ae44d6c4b378_compressed_Durban-Container-Park.webp" alt="Durban Container Park"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/ec037ca1-8f0f-4405-87ac-23c0008bdf2d_compressed_Aurum-Institute.webp" alt="Aurum Institute"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><span class="trusted-card-text">NSN</span></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/74181148-3b1b-4176-a803-d1244dfba071_compressed_IGoda-Designs.webp" alt="IGoda Designs"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/f74e38ae-6a95-486a-991b-66eebf2a0967_compressed_sappi.webp" alt="SAPPI"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/2cd60e42-d59f-43c5-93b1-adee09f46a71_compressed_IConnect-SA.webp" alt="IConnect SA"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/c6d20650-a4c4-4cac-b975-559bcd031b48_compressed_SAMID-NPC.webp" alt="SAMID NPC"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><span class="trusted-card-text">Zeta Labs</span></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/4ee30e00-a7cc-4986-b0e4-a0133aac5f99_compressed_SA-Homeloans.webp" alt="SA Homeloans"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/20489ed5-9e86-4c94-8b26-7055eb42d785_compressed_clover.webp" alt="Clover"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/da5d2d7c-05c2-4f05-a73b-cb69065f2a44_compressed_Universal-Healthcare.webp" alt="Universal Healthcare"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/801d83b5-5eb8-4173-b152-26de59b6249a_compressed_ZF-Engineering-Solutions.webp" alt="ZF Engineering Solutions"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/7f24d70a-b669-4cc6-a25c-f75a57fbad8b_compressed_Limco-Group.webp" alt="Limco Group"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/7616d644-1170-4fc8-b3e9-93a712c13f08_compressed_Walhenius-Wilhemsen.webp" alt="Walhenius Wilhemsen"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/f08191d8-c04a-41fc-a96b-0c1ef4fee728_compressed_eStudy.webp" alt="eStudy"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><span class="trusted-card-text">Leechem Laboratories</span></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/64db518d-8175-4ffe-9fc5-cac773d4f75e_compressed_bid-consulting.webp" alt="Bid Consulting"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/37cc822f-083e-4db1-aec6-128124120165_compressed_Ngcobo-NS-Inc.webp" alt="Ngcobo NS Inc"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/5935cebc-4151-4ba0-892f-8339cd2ecce4_compressed_MIHNEL-Engineers-and-Civils.webp" alt="MIHNEL Engineers and Civils"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/9f7bf669-92bc-4a08-ac33-a4f2bdca2e0b_compressed_ILitha-Labantu-NPO.webp" alt="ILitha Labantu NPO"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/17328e52-30ed-4715-bd04-3f3e67480da8_compressed_Saved-Dreams-NPO.webp" alt="Saved Dreams NPO"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/20831bc1-4a2b-4921-b701-69f878b4b976_compressed_Inkazimulo-Consulting.webp" alt="Inkazimulo Consulting"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/bed86c2b-2259-4d9a-a306-1e65b6754dea_compressed_Brown-Sugar-Restaurant.webp" alt="Brown Sugar Restaurant"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/0d559dfa-5f7e-48a3-9fdc-c0d964651ad4_compressed_MAAKE-Mining-Services.webp" alt="MAAKE Mining Services"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/2cbb0cf5-aff7-4d6b-a345-0a0ed3417b29_compressed_IUA-Business-Solutions-Pty-Ltd.webp" alt="IUA Business Solutions"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><span class="trusted-card-text">Enstra Paper</span></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/0564a997-3dab-4556-8686-c29be3ed7044_compressed_Rusmar-Packaging-Pty-Ltd.webp" alt="Rusmar Packaging"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/1d15a197-7165-43b5-8aae-bbd593ffd2dc_compressed_Computershare.webp" alt="Computershare"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/14cfaccb-3ed0-4312-9309-68555fef8fb3_compressed_Enstra-Paper-Pty-Ltd.webp" alt="Corruseal Group"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/9214d3bf-9061-40b3-919e-ae44d6c4b378_compressed_Durban-Container-Park.webp" alt="Durban Container Park"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/ec037ca1-8f0f-4405-87ac-23c0008bdf2d_compressed_Aurum-Institute.webp" alt="Aurum Institute"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><span class="trusted-card-text">NSN</span></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/74181148-3b1b-4176-a803-d1244dfba071_compressed_IGoda-Designs.webp" alt="IGoda Designs"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/f74e38ae-6a95-486a-991b-66eebf2a0967_compressed_sappi.webp" alt="SAPPI"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/2cd60e42-d59f-43c5-93b1-adee09f46a71_compressed_IConnect-SA.webp" alt="IConnect SA"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/c6d20650-a4c4-4cac-b975-559bcd031b48_compressed_SAMID-NPC.webp" alt="SAMID NPC"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><span class="trusted-card-text">Zeta Labs</span></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/4ee30e00-a7cc-4986-b0e4-a0133aac5f99_compressed_SA-Homeloans.webp" alt="SA Homeloans"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/20489ed5-9e86-4c94-8b26-7055eb42d785_compressed_clover.webp" alt="Clover"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/da5d2d7c-05c2-4f05-a73b-cb69065f2a44_compressed_Universal-Healthcare.webp" alt="Universal Healthcare"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/801d83b5-5eb8-4173-b152-26de59b6249a_compressed_ZF-Engineering-Solutions.webp" alt="ZF Engineering Solutions"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/7f24d70a-b669-4cc6-a25c-f75a57fbad8b_compressed_Limco-Group.webp" alt="Limco Group"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/7616d644-1170-4fc8-b3e9-93a712c13f08_compressed_Walhenius-Wilhemsen.webp" alt="Walhenius Wilhemsen"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/f08191d8-c04a-41fc-a96b-0c1ef4fee728_compressed_eStudy.webp" alt="eStudy"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><span class="trusted-card-text">Leechem Laboratories</span></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/64db518d-8175-4ffe-9fc5-cac773d4f75e_compressed_bid-consulting.webp" alt="Bid Consulting"></div></div>
+    </div>
+  </div>
+  <div class="relative">
+    <div class="absolute left-0 top-0 bottom-0 w-20 md:w-32 z-10 bg-gradient-to-r from-background-100 to-transparent pointer-events-none"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-20 md:w-32 z-10 bg-gradient-to-l from-background-100 to-transparent pointer-events-none"></div>
+    <div class="flex animate-marquee-reverse whitespace-nowrap">
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><span class="trusted-card-text">Leechem Laboratories</span></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/64db518d-8175-4ffe-9fc5-cac773d4f75e_compressed_bid-consulting.webp" alt="Bid Consulting"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/f08191d8-c04a-41fc-a96b-0c1ef4fee728_compressed_eStudy.webp" alt="eStudy"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/7616d644-1170-4fc8-b3e9-93a712c13f08_compressed_Walhenius-Wilhemsen.webp" alt="Walhenius Wilhemsen"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/7f24d70a-b669-4cc6-a25c-f75a57fbad8b_compressed_Limco-Group.webp" alt="Limco Group"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/801d83b5-5eb8-4173-b152-26de59b6249a_compressed_ZF-Engineering-Solutions.webp" alt="ZF Engineering Solutions"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/da5d2d7c-05c2-4f05-a73b-cb69065f2a44_compressed_Universal-Healthcare.webp" alt="Universal Healthcare"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/20489ed5-9e86-4c94-8b26-7055eb42d785_compressed_clover.webp" alt="Clover"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/4ee30e00-a7cc-4986-b0e4-a0133aac5f99_compressed_SA-Homeloans.webp" alt="SA Homeloans"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><span class="trusted-card-text">Zeta Labs</span></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/c6d20650-a4c4-4cac-b975-559bcd031b48_compressed_SAMID-NPC.webp" alt="SAMID NPC"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/2cd60e42-d59f-43c5-93b1-adee09f46a71_compressed_IConnect-SA.webp" alt="IConnect SA"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/f74e38ae-6a95-486a-991b-66eebf2a0967_compressed_sappi.webp" alt="SAPPI"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/74181148-3b1b-4176-a803-d1244dfba071_compressed_IGoda-Designs.webp" alt="IGoda Designs"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><span class="trusted-card-text">NSN</span></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/ec037ca1-8f0f-4405-87ac-23c0008bdf2d_compressed_Aurum-Institute.webp" alt="Aurum Institute"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/9214d3bf-9061-40b3-919e-ae44d6c4b378_compressed_Durban-Container-Park.webp" alt="Durban Container Park"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/14cfaccb-3ed0-4312-9309-68555fef8fb3_compressed_Enstra-Paper-Pty-Ltd.webp" alt="Corruseal Group"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/1d15a197-7165-43b5-8aae-bbd593ffd2dc_compressed_Computershare.webp" alt="Computershare"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/0564a997-3dab-4556-8686-c29be3ed7044_compressed_Rusmar-Packaging-Pty-Ltd.webp" alt="Rusmar Packaging"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><span class="trusted-card-text">Enstra Paper</span></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/2cbb0cf5-aff7-4d6b-a345-0a0ed3417b29_compressed_IUA-Business-Solutions-Pty-Ltd.webp" alt="IUA Business Solutions"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/0d559dfa-5f7e-48a3-9fdc-c0d964651ad4_compressed_MAAKE-Mining-Services.webp" alt="MAAKE Mining Services"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/bed86c2b-2259-4d9a-a306-1e65b6754dea_compressed_Brown-Sugar-Restaurant.webp" alt="Brown Sugar Restaurant"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/20831bc1-4a2b-4921-b701-69f878b4b976_compressed_Inkazimulo-Consulting.webp" alt="Inkazimulo Consulting"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/17328e52-30ed-4715-bd04-3f3e67480da8_compressed_Saved-Dreams-NPO.webp" alt="Saved Dreams NPO"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/9f7bf669-92bc-4a08-ac33-a4f2bdca2e0b_compressed_ILitha-Labantu-NPO.webp" alt="ILitha Labantu NPO"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/5935cebc-4151-4ba0-892f-8339cd2ecce4_compressed_MIHNEL-Engineers-and-Civils.webp" alt="MIHNEL Engineers and Civils"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/37cc822f-083e-4db1-aec6-128124120165_compressed_Ngcobo-NS-Inc.webp" alt="Ngcobo NS Inc"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><span class="trusted-card-text">Leechem Laboratories</span></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/64db518d-8175-4ffe-9fc5-cac773d4f75e_compressed_bid-consulting.webp" alt="Bid Consulting"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/f08191d8-c04a-41fc-a96b-0c1ef4fee728_compressed_eStudy.webp" alt="eStudy"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/7616d644-1170-4fc8-b3e9-93a712c13f08_compressed_Walhenius-Wilhemsen.webp" alt="Walhenius Wilhemsen"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/7f24d70a-b669-4cc6-a25c-f75a57fbad8b_compressed_Limco-Group.webp" alt="Limco Group"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/801d83b5-5eb8-4173-b152-26de59b6249a_compressed_ZF-Engineering-Solutions.webp" alt="ZF Engineering Solutions"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/da5d2d7c-05c2-4f05-a73b-cb69065f2a44_compressed_Universal-Healthcare.webp" alt="Universal Healthcare"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/20489ed5-9e86-4c94-8b26-7055eb42d785_compressed_clover.webp" alt="Clover"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/4ee30e00-a7cc-4986-b0e4-a0133aac5f99_compressed_SA-Homeloans.webp" alt="SA Homeloans"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><span class="trusted-card-text">Zeta Labs</span></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/c6d20650-a4c4-4cac-b975-559bcd031b48_compressed_SAMID-NPC.webp" alt="SAMID NPC"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/2cd60e42-d59f-43c5-93b1-adee09f46a71_compressed_IConnect-SA.webp" alt="IConnect SA"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/f74e38ae-6a95-486a-991b-66eebf2a0967_compressed_sappi.webp" alt="SAPPI"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/74181148-3b1b-4176-a803-d1244dfba071_compressed_IGoda-Designs.webp" alt="IGoda Designs"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><span class="trusted-card-text">NSN</span></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/ec037ca1-8f0f-4405-87ac-23c0008bdf2d_compressed_Aurum-Institute.webp" alt="Aurum Institute"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/9214d3bf-9061-40b3-919e-ae44d6c4b378_compressed_Durban-Container-Park.webp" alt="Durban Container Park"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/14cfaccb-3ed0-4312-9309-68555fef8fb3_compressed_Enstra-Paper-Pty-Ltd.webp" alt="Corruseal Group"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/1d15a197-7165-43b5-8aae-bbd593ffd2dc_compressed_Computershare.webp" alt="Computershare"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/0564a997-3dab-4556-8686-c29be3ed7044_compressed_Rusmar-Packaging-Pty-Ltd.webp" alt="Rusmar Packaging"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><span class="trusted-card-text">Enstra Paper</span></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/2cbb0cf5-aff7-4d6b-a345-0a0ed3417b29_compressed_IUA-Business-Solutions-Pty-Ltd.webp" alt="IUA Business Solutions"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/0d559dfa-5f7e-48a3-9fdc-c0d964651ad4_compressed_MAAKE-Mining-Services.webp" alt="MAAKE Mining Services"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/bed86c2b-2259-4d9a-a306-1e65b6754dea_compressed_Brown-Sugar-Restaurant.webp" alt="Brown Sugar Restaurant"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/20831bc1-4a2b-4921-b701-69f878b4b976_compressed_Inkazimulo-Consulting.webp" alt="Inkazimulo Consulting"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/17328e52-30ed-4715-bd04-3f3e67480da8_compressed_Saved-Dreams-NPO.webp" alt="Saved Dreams NPO"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/9f7bf669-92bc-4a08-ac33-a4f2bdca2e0b_compressed_ILitha-Labantu-NPO.webp" alt="ILitha Labantu NPO"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/5935cebc-4151-4ba0-892f-8339cd2ecce4_compressed_MIHNEL-Engineers-and-Civils.webp" alt="MIHNEL Engineers and Civils"></div></div>
+      <div class="inline-flex items-center justify-center mx-3 md:mx-4 flex-shrink-0"><div class="trusted-card"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/37cc822f-083e-4db1-aec6-128124120165_compressed_Ngcobo-NS-Inc.webp" alt="Ngcobo NS Inc"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="bg-background-100 border-t border-background-200/70">
+  <div class="editorial-container py-16 md:py-20 text-center">
+    <p class="text-[0.65rem] font-sans tracking-[0.25em] uppercase text-secondary-500 mb-4">Your Trusted HR Business Partner</p>
+    <h2 class="font-sans text-2xl md:text-3xl lg:text-4xl text-foreground-950 mb-6 max-w-2xl mx-auto leading-tight">It is always an honour to partner with you</h2>
+    <p class="text-sm text-foreground-600 max-w-lg mx-auto mb-8 leading-relaxed">Let us be the trusted partner that supports your growth, compliance, and people strategy for a thriving workforce.</p>
+    <a href="contact.html" class="inline-block text-[0.7rem] font-sans tracking-[0.2em] uppercase px-10 py-4 bg-foreground-950 text-background-50 border border-foreground-950 hover:bg-transparent hover:text-foreground-950 transition-all duration-500">Contact Us</a>
+  </div>
+  <div class="editorial-container pb-12">
+    <div class="border-t border-background-200/70 pt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div>
+        <div class="mb-4">
+          <img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/14e8aa28-81b4-4c25-9661-837e119dd1ba_compressed_TNR_Logo_FullColour_Transparent.webp" alt="TNR HR Business Solutions" class="h-16 md:h-20 w-auto" loading="lazy" width="200" height="52" style="transform: scale(1.15); transform-origin: left center;">
+        </div>
+        <p class="text-sm text-foreground-600 leading-relaxed">Expert, trusted, and professional HR business solutions across South Africa.</p>
+      </div>
+      <div>
+        <h4 class="text-[0.65rem] font-sans tracking-[0.2em] uppercase text-foreground-500 mb-5">Quick Links</h4>
+        <ul class="space-y-3">
+          <li><a href="about.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">About Us</a></li>
+          <li><a href="services.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">Services</a></li>
+          <li><a href="newsletter.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">Newsletter</a></li>
+          <li><a href="register.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">Register</a></li>
+          <li><a href="contact.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">Contact</a></li>
+          <li><a href="careers.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-[0.65rem] font-sans tracking-[0.2em] uppercase text-foreground-500 mb-5">Services</h4>
+        <ul class="space-y-3">
+          <li><a href="hr-consulting.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">HR Consulting</a></li>
+          <li><a href="payroll-services.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">Payroll</a></li>
+          <li><a href="chairing.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">Chairing of Hearings</a></li>
+          <li><a href="recruitment.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">Recruitment</a></li>
+          <li><a href="training.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">Training</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-[0.65rem] font-sans tracking-[0.2em] uppercase text-foreground-500 mb-5">Get in Touch</h4>
+        <div class="space-y-3 text-sm text-foreground-700">
+          <p class="flex items-start gap-3"><i class="ri-map-pin-line text-accent-500 mt-0.5"></i><span>18 The Boulevard, Westway Office Park, Westville, 3620, South Africa</span></p>
+          <p class="flex items-center gap-3"><i class="ri-mail-line text-accent-500"></i><a href="mailto:pearl@tnrconsulting.co.za" class="hover:text-accent-500 transition-colors">pearl@tnrconsulting.co.za</a></p>
+          <p class="flex items-center gap-3"><i class="ri-whatsapp-line text-accent-500"></i><a href="https://wa.me/27630564045" target="_blank" rel="noopener noreferrer" class="hover:text-accent-500 transition-colors">+27 63 056 4045</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-background-200/70">
+    <div class="editorial-container py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-xs text-foreground-500">&copy; 2026 TNR HR Business Solutions Pty Ltd. All Rights Reserved.</p>
+      <div class="flex items-center gap-5">
+        <a href="https://www.linkedin.com/company/tnr-hr-business-solutions/" target="_blank" rel="noopener noreferrer" class="text-foreground-400 hover:text-accent-500 transition-colors" aria-label="LinkedIn"><i class="ri-linkedin-fill text-lg"></i></a>
+        <a href="#" class="text-foreground-400 hover:text-accent-500 transition-colors" aria-label="Facebook"><i class="ri-facebook-fill text-lg"></i></a>
+        <a href="#" class="text-foreground-400 hover:text-accent-500 transition-colors" aria-label="Instagram"><i class="ri-instagram-line text-lg"></i></a>
+        <a href="login.html" class="text-[0.6rem] text-foreground-400 hover:text-foreground-600 transition-colors">Login</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/27630564045" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

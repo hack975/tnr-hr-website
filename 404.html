@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <title>404 - Page Not Found | TNR HR Business Solutions</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: { 50: 'oklch(var(--background-50))', 100: 'oklch(var(--background-100))', 200: 'oklch(var(--background-200))', 300: 'oklch(var(--background-300))', 400: 'oklch(var(--background-400))', 500: 'oklch(var(--background-500))', 600: 'oklch(var(--background-600))', 700: 'oklch(var(--background-700))', 800: 'oklch(var(--background-800))', 900: 'oklch(var(--background-900))', 950: 'oklch(var(--background-950))' },
+            primary: { 50: 'oklch(var(--primary-50))', 100: 'oklch(var(--primary-100))', 200: 'oklch(var(--primary-200))', 300: 'oklch(var(--primary-300))', 400: 'oklch(var(--primary-400))', 500: 'oklch(var(--primary-500))', 600: 'oklch(var(--primary-600))', 700: 'oklch(var(--primary-700))', 800: 'oklch(var(--primary-800))', 900: 'oklch(var(--primary-900))', 950: 'oklch(var(--primary-950))' },
+            foreground: { 50: 'oklch(var(--foreground-50))', 100: 'oklch(var(--foreground-100))', 200: 'oklch(var(--foreground-200))', 300: 'oklch(var(--foreground-300))', 400: 'oklch(var(--foreground-400))', 500: 'oklch(var(--foreground-500))', 600: 'oklch(var(--foreground-600))', 700: 'oklch(var(--foreground-700))', 800: 'oklch(var(--foreground-800))', 900: 'oklch(var(--foreground-900))', 950: 'oklch(var(--foreground-950))' },
+          },
+          fontFamily: { sans: ['var(--font-body)'], heading: ['var(--font-body)'], body: ['var(--font-body)'], label: ['var(--font-label)'] },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css">
+</head>
+<body style="background: oklch(var(--background-50));">
+<section class="min-h-screen flex items-center justify-center py-24">
+  <div class="editorial-container text-center">
+    <div class="font-heading text-7xl md:text-9xl text-primary-500/20 font-light mb-6">404</div>
+    <h1 class="font-heading text-xl md:text-2xl text-foreground-950 font-light mb-4">Oops! Page not found.</h1>
+    <p class="text-sm text-foreground-600 max-w-md mx-auto mb-10 leading-relaxed">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+    <a href="index.html" class="inline-block text-[0.7rem] font-sans tracking-[0.2em] uppercase px-10 py-4 bg-foreground-950 text-background-50 hover:bg-transparent hover:text-foreground-950 border border-foreground-950 transition-all duration-500">Back to Home</a>
+  </div>
+</section>
+</body>
+</html>

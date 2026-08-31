@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://storage.readdy-site.link">
+  <link rel="preconnect" href="https://readdy.ai">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <title>Stay Connected | TNR HR Business Solutions</title>
+  <meta name="description" content="Register to receive the TNR HR monthly newsletter and be notified about new job opportunities.">
+  <link rel="canonical" href="https://tnrhrbs.co.za/register.html">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: { 50: 'oklch(var(--background-50))', 100: 'oklch(var(--background-100))', 200: 'oklch(var(--background-200))', 300: 'oklch(var(--background-300))', 400: 'oklch(var(--background-400))', 500: 'oklch(var(--background-500))', 600: 'oklch(var(--background-600))', 700: 'oklch(var(--background-700))', 800: 'oklch(var(--background-800))', 900: 'oklch(var(--background-900))', 950: 'oklch(var(--background-950))' },
+            primary: { 50: 'oklch(var(--primary-50))', 100: 'oklch(var(--primary-100))', 200: 'oklch(var(--primary-200))', 300: 'oklch(var(--primary-300))', 400: 'oklch(var(--primary-400))', 500: 'oklch(var(--primary-500))', 600: 'oklch(var(--primary-600))', 700: 'oklch(var(--primary-700))', 800: 'oklch(var(--primary-800))', 900: 'oklch(var(--primary-900))', 950: 'oklch(var(--primary-950))' },
+            accent: { 50: 'oklch(var(--accent-50))', 100: 'oklch(var(--accent-100))', 200: 'oklch(var(--accent-200))', 300: 'oklch(var(--accent-300))', 400: 'oklch(var(--accent-400))', 500: 'oklch(var(--accent-500))', 600: 'oklch(var(--accent-600))', 700: 'oklch(var(--accent-700))', 800: 'oklch(var(--accent-800))', 900: 'oklch(var(--accent-900))', 950: 'oklch(var(--accent-950))' },
+            secondary: { 50: 'oklch(var(--secondary-50))', 100: 'oklch(var(--secondary-100))', 200: 'oklch(var(--secondary-200))', 300: 'oklch(var(--secondary-300))', 400: 'oklch(var(--secondary-400))', 500: 'oklch(var(--secondary-500))', 600: 'oklch(var(--secondary-600))', 700: 'oklch(var(--secondary-700))', 800: 'oklch(var(--secondary-800))', 900: 'oklch(var(--secondary-900))', 950: 'oklch(var(--secondary-950))' },
+            foreground: { 50: 'oklch(var(--foreground-50))', 100: 'oklch(var(--foreground-100))', 200: 'oklch(var(--foreground-200))', 300: 'oklch(var(--foreground-300))', 400: 'oklch(var(--foreground-400))', 500: 'oklch(var(--foreground-500))', 600: 'oklch(var(--foreground-600))', 700: 'oklch(var(--foreground-700))', 800: 'oklch(var(--foreground-800))', 900: 'oklch(var(--foreground-900))', 950: 'oklch(var(--foreground-950))' },
+          },
+          fontFamily: { sans: ['var(--font-body)'], heading: ['var(--font-body)'], body: ['var(--font-body)'], label: ['var(--font-label)'] },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header id="main-header" style="position:fixed;top:0;left:0;right:0;z-index:50;background:oklch(var(--background-50) / 0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.10);">
+  <div class="editorial-container">
+    <nav class="flex items-center justify-between h-[56px] md:h-[64px]">
+      <a href="index.html" class="flex-shrink-0 flex items-center" style="margin-right: 2.5rem;">
+        <img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/14e8aa28-81b4-4c25-9661-837e119dd1ba_compressed_TNR_Logo_FullColour_Transparent.webp" alt="TNR HR Business Solutions" class="header-logo h-28 w-auto" fetchpriority="high" width="120" height="40" style="transform-origin: left center;">
+      </a>
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="index.html" class="nav-link text-[0.7rem] font-sans tracking-[0.2em] uppercase text-foreground-800 whitespace-nowrap">Home</a>
+        <a href="services.html" class="nav-link text-[0.7rem] font-sans tracking-[0.15em] uppercase text-foreground-800 hover:text-accent-500 transition-colors whitespace-nowrap">Services</a>
+        <a href="about.html" class="nav-link text-[0.7rem] font-sans tracking-[0.2em] uppercase text-foreground-800 whitespace-nowrap">About Us</a>
+        <a href="newsletter.html" class="nav-link text-[0.7rem] font-sans tracking-[0.2em] uppercase text-foreground-800 whitespace-nowrap">Newsletter</a>
+        <a href="careers.html" class="nav-link text-[0.7rem] font-sans tracking-[0.2em] uppercase text-foreground-800 whitespace-nowrap">Careers</a>
+        <a href="contact.html" class="nav-link text-[0.7rem] font-sans tracking-[0.2em] uppercase text-foreground-800 whitespace-nowrap">Contact</a>
+        <a href="register.html" class="nav-link text-[0.7rem] font-sans tracking-[0.2em] uppercase text-foreground-800 whitespace-nowrap">Register</a>
+      </div>
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="login.html" class="magnetic-btn text-[0.65rem] font-sans tracking-[0.15em] uppercase px-5 py-2.5 border border-foreground-800 text-foreground-800 hover:bg-foreground-800 hover:text-background-50 transition-colors duration-500 whitespace-nowrap"><i class="ri-user-line mr-1.5"></i>Login</a>
+      </div>
+      <button id="mobile-menu-toggle" class="lg:hidden text-foreground-800 p-2"><i class="ri-menu-line text-xl"></i></button>
+    </nav>
+  </div>
+  <div id="mobile-menu" class="mobile-menu lg:hidden bg-background-50 border-t border-background-200/70">
+    <div class="editorial-container py-6 space-y-4">
+      <a href="index.html" class="block text-[0.75rem] font-sans tracking-[0.15em] uppercase py-2 text-foreground-700">Home</a>
+      <a href="about.html" class="block text-[0.75rem] font-sans tracking-[0.15em] uppercase py-2 text-foreground-700">About Us</a>
+      <a href="services.html" class="block text-sm text-foreground-700 hover:text-accent-500 transition-colors">Services</a>
+      <a href="newsletter.html" class="block text-[0.75rem] font-sans tracking-[0.15em] uppercase py-2 text-foreground-700">Newsletter</a>
+      <a href="careers.html" class="block text-[0.75rem] font-sans tracking-[0.15em] uppercase py-2 text-foreground-700">Careers</a>
+      <a href="contact.html" class="block text-[0.75rem] font-sans tracking-[0.15em] uppercase py-2 text-foreground-700">Contact</a>
+      <a href="register.html" class="block text-[0.75rem] font-sans tracking-[0.15em] uppercase py-2 text-foreground-700">Register</a>
+      <a href="login.html" class="block text-center text-[0.7rem] font-sans tracking-[0.15em] uppercase px-5 py-3 border border-foreground-800 text-foreground-800 hover:bg-foreground-800 hover:text-background-50 transition-colors mt-2"><i class="ri-user-line mr-1.5"></i>Login</a>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ PAGE HERO ═══ -->
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="https://readdy.ai/api/search-image?query=Smiling%20Black%20South%20African%20professional%20woman%20registering%20on%20a%20tablet%20at%20a%20bright%20modern%20office%20desk%2C%20welcoming%20and%20connected%20atmosphere%2C%20warm%20natural%20daylight%2C%20authentic%20editorial%20photography&width=1600&height=700&seq=register-hero-blk-11&orientation=landscape" alt="Register"></div>
+  <div class="page-hero-overlay" style="background:linear-gradient(to bottom,rgba(10,10,20,0.72),rgba(10,10,20,0.60),rgba(10,10,20,0.78));"></div>
+  <div class="page-hero-content">
+    <span style="display:block;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.90);margin-bottom:1rem;text-shadow:0 1px 6px rgba(0,0,0,0.6);">Register</span>
+    <h1 style="font-size:clamp(1.8rem,4vw,3.5rem);color:#ffffff;font-weight:300;line-height:1.2;text-shadow:0 2px 16px rgba(0,0,0,0.7),0 1px 4px rgba(0,0,0,0.5);margin-bottom:1rem;">Stay Connected</h1>
+    <p style="font-size:clamp(0.9rem,1.5vw,1.1rem);color:rgba(255,255,255,0.90);max-width:42rem;margin:0 auto;line-height:1.7;text-shadow:0 1px 8px rgba(0,0,0,0.6);">Register to receive our monthly newsletter and get notified about new job opportunities.</p>
+  </div>
+</section>
+
+<!-- ═══ REGISTER SECTION ═══ -->
+<section class="py-24 md:py-32 bg-background-50">
+  <div class="editorial-container">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+      <!-- Benefits -->
+      <div class="reveal">
+        <span class="block text-[0.65rem] font-sans tracking-[0.25em] uppercase text-secondary-500 mb-6">Why Register?</span>
+        <h2 class="font-sans text-2xl md:text-3xl text-foreground-950 font-light mb-8">Get the Latest <em class="italic text-foreground-600">Straight to Your Inbox</em></h2>
+        <div class="space-y-6 mb-10">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex items-center justify-center bg-primary-100 rounded-full flex-shrink-0"><i class="ri-newspaper-line text-lg text-primary-500"></i></div>
+            <div>
+              <p class="text-sm font-sans font-medium text-foreground-950 mb-1">Monthly Newsletter</p>
+              <p class="text-sm text-foreground-600 leading-relaxed">Expert HR insights, labour law updates, compliance tips, and industry news delivered monthly.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex items-center justify-center bg-accent-100 rounded-full flex-shrink-0"><i class="ri-briefcase-line text-lg text-accent-500"></i></div>
+            <div>
+              <p class="text-sm font-sans font-medium text-foreground-950 mb-1">Job Post Alerts</p>
+              <p class="text-sm text-foreground-600 leading-relaxed">Be the first to know when new career opportunities open at TNR HR Business Solutions.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex items-center justify-center bg-background-200 rounded-full flex-shrink-0"><i class="ri-shield-check-line text-lg text-foreground-600"></i></div>
+            <div>
+              <p class="text-sm font-sans font-medium text-foreground-950 mb-1">No Spam, Ever</p>
+              <p class="text-sm text-foreground-600 leading-relaxed">We respect your inbox. Only valuable content, and you can unsubscribe anytime with one click.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="reveal reveal-delay-1">
+        <div class="bg-background-100 p-8 md:p-12">
+          <span class="block text-[0.65rem] font-sans tracking-[0.25em] uppercase text-secondary-500 mb-6">Sign Up</span>
+          <h3 class="font-sans text-xl text-foreground-950 font-normal mb-8">Choose Your Updates</h3>
+
+          <div id="reg-success" class="hidden text-center py-8">
+            <div class="w-14 h-14 flex items-center justify-center bg-accent-100 rounded-full mx-auto mb-5"><i class="ri-check-line text-2xl text-accent-500"></i></div>
+            <h4 class="font-sans text-xl text-foreground-950 mb-3">You're Registered!</h4>
+            <p class="text-sm text-foreground-600 mb-6">Thank you for signing up. You'll start receiving updates based on your preferences.</p>
+            <button onclick="resetReg()" class="text-[0.7rem] font-sans tracking-[0.15em] uppercase text-accent-500 hover:text-accent-600 transition-colors">Register Another</button>
+          </div>
+
+          <form id="register-form" data-readdy-form class="space-y-6">
+            <div style="position:absolute;opacity:0;pointer-events:none;" aria-hidden="true">
+              <input type="text" name="website_alt" tabindex="-1" autocomplete="off" aria-hidden="true" readonly>
+            </div>
+            <div>
+              <label for="reg-name" class="block text-[0.65rem] font-sans tracking-[0.15em] uppercase text-foreground-500 mb-2">Full Name *</label>
+              <input type="text" id="reg-name" name="name" required class="form-input" placeholder="Your full name">
+            </div>
+            <div>
+              <label for="reg-email" class="block text-[0.65rem] font-sans tracking-[0.15em] uppercase text-foreground-500 mb-2">Email Address *</label>
+              <input type="email" id="reg-email" name="email" required class="form-input" placeholder="your@email.com">
+            </div>
+            <div class="space-y-4 pt-2">
+              <p class="text-[0.65rem] font-sans tracking-[0.15em] uppercase text-foreground-500 mb-3">I want to receive: *</p>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" name="newsletter" class="mt-0.5 w-4 h-4 cursor-pointer" checked>
+                <div>
+                  <p class="text-sm text-foreground-950 group-hover:text-primary-500 transition-colors">Monthly Newsletter</p>
+                  <p class="text-xs text-foreground-500 mt-0.5">HR insights, compliance updates, and industry news</p>
+                </div>
+              </label>
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" name="job_alerts" class="mt-0.5 w-4 h-4 cursor-pointer">
+                <div>
+                  <p class="text-sm text-foreground-950 group-hover:text-primary-500 transition-colors">Job Post Alerts</p>
+                  <p class="text-xs text-foreground-500 mt-0.5">Notifications when new career opportunities are posted</p>
+                </div>
+              </label>
+            </div>
+            <div id="reg-error" class="hidden flex items-center gap-2 text-sm text-accent-500 bg-accent-50/50 p-3 rounded">
+              <i class="ri-error-warning-line"></i><span id="reg-error-msg"></span>
+            </div>
+            <button type="submit" id="reg-btn" class="w-full text-[0.75rem] font-sans tracking-[0.2em] uppercase px-6 py-4 bg-foreground-950 text-background-50 hover:bg-transparent hover:text-foreground-950 border border-foreground-950 transition-all duration-500 disabled:opacity-50 flex items-center justify-center gap-2">
+              <span>Register Now</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="bg-background-100 border-t border-background-200/70">
+  <div class="editorial-container py-16 md:py-20 text-center">
+    <p class="text-[0.65rem] font-sans tracking-[0.25em] uppercase text-secondary-500 mb-4">Your Trusted HR Business Partner</p>
+    <h2 class="font-sans text-2xl md:text-3xl lg:text-4xl text-foreground-950 mb-6 max-w-2xl mx-auto leading-tight">It is always an honour to partner with you</h2>
+    <p class="text-sm text-foreground-600 max-w-lg mx-auto mb-8 leading-relaxed">Let us be the trusted partner that supports your growth, compliance, and people strategy for a thriving workforce.</p>
+    <a href="contact.html" class="inline-block text-[0.7rem] font-sans tracking-[0.2em] uppercase px-10 py-4 bg-foreground-950 text-background-50 border border-foreground-950 hover:bg-transparent hover:text-foreground-950 transition-all duration-500">Contact Us</a>
+  </div>
+  <div class="editorial-container pb-12">
+    <div class="border-t border-background-200/70 pt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div>
+        <div class="mb-4">
+          <img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/14e8aa28-81b4-4c25-9661-837e119dd1ba_compressed_TNR_Logo_FullColour_Transparent.webp" alt="TNR HR Business Solutions" class="h-16 md:h-20 w-auto" loading="lazy" width="200" height="52" style="transform: scale(1.15); transform-origin: left center;">
+        </div>
+        <p class="text-sm text-foreground-600 leading-relaxed">Expert, trusted, and professional HR business solutions across South Africa.</p>
+      </div>
+      <div>
+        <h4 class="text-[0.65rem] font-sans tracking-[0.2em] uppercase text-foreground-500 mb-5">Quick Links</h4>
+        <ul class="space-y-3">
+          <li><a href="about.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">About Us</a></li>
+          <li><a href="services.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">Services</a></li>
+          <li><a href="newsletter.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">Newsletter</a></li>
+          <li><a href="register.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">Register</a></li>
+          <li><a href="contact.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">Contact</a></li>
+          <li><a href="careers.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-[0.65rem] font-sans tracking-[0.2em] uppercase text-foreground-500 mb-5">Services</h4>
+        <ul class="space-y-3">
+          <li><a href="hr-consulting.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">HR Consulting</a></li>
+          <li><a href="payroll-services.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">Payroll</a></li>
+          <li><a href="chairing.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">Chairing of Hearings</a></li>
+          <li><a href="recruitment.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">Recruitment</a></li>
+          <li><a href="training.html" class="text-sm text-foreground-700 hover:text-accent-500 transition-colors duration-300">Training</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-[0.65rem] font-sans tracking-[0.2em] uppercase text-foreground-500 mb-5">Get in Touch</h4>
+        <div class="space-y-3 text-sm text-foreground-700">
+          <p class="flex items-start gap-3"><i class="ri-map-pin-line text-accent-500 mt-0.5"></i><span>18 The Boulevard, Westway Office Park, Westville, 3620, South Africa</span></p>
+          <p class="flex items-center gap-3"><i class="ri-mail-line text-accent-500"></i><a href="mailto:pearl@tnrconsulting.co.za" class="hover:text-accent-500 transition-colors">pearl@tnrconsulting.co.za</a></p>
+          <p class="flex items-center gap-3"><i class="ri-whatsapp-line text-accent-500"></i><a href="https://wa.me/27630564045" target="_blank" rel="noopener noreferrer" class="hover:text-accent-500 transition-colors">+27 63 056 4045</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-background-200/70">
+    <div class="editorial-container py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-xs text-foreground-500">&copy; 2026 TNR HR Business Solutions Pty Ltd. All Rights Reserved.</p>
+      <div class="flex items-center gap-5">
+        <a href="https://www.linkedin.com/company/tnr-hr-business-solutions/" target="_blank" rel="noopener noreferrer" class="text-foreground-400 hover:text-accent-500 transition-colors" aria-label="LinkedIn"><i class="ri-linkedin-fill text-lg"></i></a>
+        <a href="#" class="text-foreground-400 hover:text-accent-500 transition-colors" aria-label="Facebook"><i class="ri-facebook-fill text-lg"></i></a>
+        <a href="#" class="text-foreground-400 hover:text-accent-500 transition-colors" aria-label="Instagram"><i class="ri-instagram-line text-lg"></i></a>
+        <a href="login.html" class="text-[0.6rem] text-foreground-400 hover:text-foreground-600 transition-colors">Login</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/27630564045" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script src="js/main.js" defer></script>
+<script>
+(function() {
+  const FORM_URL = 'https://readdy.ai/api/form/d9gsdncoq4dpg2lrmsb0';
+  const form = document.getElementById('register-form');
+  const successDiv = document.getElementById('reg-success');
+  const errorDiv = document.getElementById('reg-error');
+  const errorMsg = document.getElementById('reg-error-msg');
+  const btn = document.getElementById('reg-btn');
+
+  window.resetReg = function() {
+    form.reset();
+    form.style.display = '';
+    successDiv.classList.add('hidden');
+    errorDiv.classList.add('hidden');
+  };
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const email = formData.get('email');
+    const name = formData.get('name');
+    const newsletter = formData.get('newsletter');
+    const jobAlerts = formData.get('job_alerts');
+
+    if (!email || !name) { errorMsg.textContent = 'Please fill in all required fields.'; errorDiv.classList.remove('hidden'); return; }
+    if (!newsletter && !jobAlerts) { errorMsg.textContent = 'Please select at least one subscription option.'; errorDiv.classList.remove('hidden'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errorMsg.textContent = 'Please enter a valid email address.'; errorDiv.classList.remove('hidden'); return; }
+
+    errorDiv.classList.add('hidden');
+    btn.innerHTML = '<i class="ri-loader-4-line animate-spin"></i><span>Registering...</span>';
+    btn.disabled = true;
+
+    try {
+      await window.handleFormSubmit(form, FORM_URL);
+      // Save to localStorage for admin dashboard
+      try {
+        var cached = localStorage.getItem('tnr_registrations');
+        var registrations = cached ? JSON.parse(cached) : [];
+        registrations.push({
+          name: name,
+          email: email,
+          newsletter: newsletter ? true : false,
+          jobAlerts: jobAlerts ? true : false,
+          date: new Date().toISOString()
+        });
+        if (registrations.length > 100) registrations.shift();
+        localStorage.setItem('tnr_registrations', JSON.stringify(registrations));
+        var count = parseInt(localStorage.getItem('tnr_registration_count') || '0', 10);
+        localStorage.setItem('tnr_registration_count', String(count + 1));
+      } catch(e) { /* ignore */ }
+      // Also save to Supabase database directly
+      try {
+        var supabaseReg = window.supabase.createClient(
+          'https://eugqokfxwucusniamxvm.supabase.co',
+          'sb_publishable_8p9-6czzRXPx5rS2BwiZGg_QGz3RWeM'
+        );
+        supabaseReg.from('registrations').insert({
+          name: name,
+          email: email,
+          newsletter: newsletter ? true : false,
+          job_alerts: jobAlerts ? true : false
+        }).catch(function() {} );
+      } catch(e) { /* ignore */ }
+      form.style.display = 'none';
+      successDiv.classList.remove('hidden');
+      btn.innerHTML = '<span>Register Now</span>';
+      btn.disabled = false;
+    } catch(err) {
+      errorMsg.textContent = err.message || 'Something went wrong. Please try again.';
+      errorDiv.classList.remove('hidden');
+      btn.innerHTML = '<span>Register Now</span>';
+      btn.disabled = false;
+    }
+  });
+})();
+</script>
+</body>
+</html>
