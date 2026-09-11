@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Admin Login | TNR HR Business Solutions</title><meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="favicon.png"><link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css">
+</head>
+<body class="bg-[#f5f2eb]">
+<div class="min-h-screen flex items-center justify-center p-6">
+  <div class="w-full max-w-md bg-white/70 border border-black/5 shadow-xl p-8 md:p-12">
+    <div class="text-center mb-8">
+      <a href="index.html" class="inline-flex justify-center mb-6"><img src="https://storage.readdy-site.link/project_files/dfa9ab34-723c-4faf-958f-62921ec1b24e/14e8aa28-81b4-4c25-9661-837e119dd1ba_compressed_TNR_Logo_FullColour_Transparent.webp" class="h-12 w-auto" alt="TNR HR"></a>
+      <div class="w-14 h-14 rounded-full bg-black/5 mx-auto flex items-center justify-center mb-4"><i class="ri-shield-keyhole-line text-2xl"></i></div>
+      <h1 id="title" class="text-xl text-black mb-2">Admin Login</h1>
+      <p id="desc" class="text-sm text-black/60">Sign in with your admin account.</p>
+    </div>
+    <form id="form" class="space-y-5">
+      <div><label class="block text-[.65rem] tracking-[.15em] uppercase mb-2">Username</label><input id="username" value="admin" autocomplete="username" class="w-full border border-black/10 bg-white px-4 py-3 text-sm outline-none focus:border-black/40"></div>
+      <div><label class="block text-[.65rem] tracking-[.15em] uppercase mb-2">Password</label><div class="relative"><input id="password" type="password" required autocomplete="current-password" class="w-full border border-black/10 bg-white px-4 py-3 pr-12 text-sm outline-none focus:border-black/40"><button type="button" id="toggle" class="absolute right-3 top-1/2 -translate-y-1/2 text-black/50"><i class="ri-eye-line"></i></button></div></div>
+      <div id="error" class="hidden bg-red-50 text-red-700 text-sm p-3"></div>
+      <button id="btn" class="w-full bg-[#111827] text-white py-4 text-[.7rem] tracking-[.2em] uppercase disabled:opacity-50"><span id="btnText">Login</span></button>
+    </form>
+    <p class="mt-8 text-center text-xs text-black/50"><a href="index.html">← Back to Website</a></p>
+  </div>
+</div>
+<script>
+(function(){
+ const AUTH='https://eugqokfxwucusniamxvm.supabase.co/functions/v1/admin-auth';
+ const TOKEN='tnr_admin_token', EXPIRES='tnr_admin_expires', USER='tnr_admin_user';
+ const form=document.getElementById('form'), u=document.getElementById('username'), p=document.getElementById('password'), err=document.getElementById('error'), btn=document.getElementById('btn'), btnText=document.getElementById('btnText');
+ let setup=false;
+ const token=localStorage.getItem(TOKEN), exp=Number(localStorage.getItem(EXPIRES)||0);
+ if(token&&exp>Date.now()){location.href='admin.html';return;}
+ document.getElementById('toggle').onclick=function(){p.type=p.type==='password'?'text':'password';this.innerHTML=p.type==='password'?'<i class="ri-eye-line"></i>':'<i class="ri-eye-off-line"></i>';};
+ fetch(AUTH,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'check'})}).then(r=>r.json()).then(d=>{
+   if(!d.passwordSet){setup=true;document.getElementById('title').textContent='Create Admin Account';document.getElementById('desc').textContent='Create the first Super Admin account.';btnText.textContent='Create Account';}
+ }).catch(()=>{});
+ form.onsubmit=async function(e){e.preventDefault();err.classList.add('hidden');btn.disabled=true;btnText.textContent=setup?'Creating...':'Logging in...';
+   try{const r=await fetch(AUTH,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:setup?'setup':'login',username:u.value.trim()||'admin',password:p.value})});const d=await r.json();if(!r.ok||!d.success)throw new Error(d.message||'Login failed.');localStorage.setItem(TOKEN,d.token);localStorage.setItem(EXPIRES,String(new Date(d.expiresAt).getTime()));localStorage.setItem(USER,JSON.stringify(d.user||{}));location.href='admin.html';}
+   catch(x){err.textContent=x.message;err.classList.remove('hidden');btn.disabled=false;btnText.textContent=setup?'Create Account':'Login';}
+ };
+})();
+</script>
+</body></html>
