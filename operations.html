@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>TNR HR | Operations</title>
+<style>
+:root{font-family:Arial,Helvetica,sans-serif;color:#17253b;background:#f6f7f9}*{box-sizing:border-box}body{margin:0}header{background:#15253b;color:#fff;padding:19px max(18px,calc((100% - 1280px)/2));display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}header a{color:#fff}main{max-width:1280px;margin:auto;padding:26px 20px}h1{margin:0;font-size:27px}h2{margin:0 0 16px;font-size:22px}button,.btn{cursor:pointer;background:#a82940;color:#fff;padding:10px 15px;border:0;border-radius:5px;font-weight:600;font-size:13px;text-decoration:none}button.secondary,.btn.secondary{background:#15253b}button:disabled{opacity:.5}nav{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.card{background:white;border:1px solid #dfe3ec;border-radius:9px;padding:18px;margin:0 0 16px;box-shadow:0 2px 6px #14233b0b}.muted{color:#5e6c7c;font-size:13px}.tag{display:inline-block;background:#eaf0f6;border-radius:100px;padding:5px 10px;font-size:12px}.warn{background:#fff0d9;color:#8c4c00}.row{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}label{display:block;color:#394a61;font-size:12px;font-weight:700}input,select,textarea{width:100%;border:1px solid #cbd4df;border-radius:5px;padding:10px;margin-top:6px;font:inherit;background:#fff;color:#17253b}textarea{min-height:64px}section[hidden]{display:none}#status{min-height:20px}summary{cursor:pointer;font-weight:700;color:#a82940}.data{font-size:13px;line-height:1.65;overflow-wrap:anywhere}.actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px} .tabs button.active{background:#15253b} .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px}.stat{background:white;border:1px solid #dfe3ec;border-radius:8px;padding:16px}.stat strong{font-size:24px;display:block;margin:6px 0} .error{color:#aa1737} .success{color:#14643c}@media(max-width:600px){main{padding:18px 12px}h1{font-size:23px}.grid{grid-template-columns:1fr}header{padding:14px}}
+</style></head>
+<body><header><div><strong>TNR HR BUSINESS SOLUTIONS</strong><div style="font-size:12px;opacity:.8">Secure Operations Centre</div></div><div><a href="admin.html">← Admin dashboard</a> &nbsp; <a href="index.html">Website</a></div></header>
+<main><div class="row"><div><h1>Recruitment & HR Pipeline</h1><p class="muted">Manage candidates, consultation enquiries, assigned staff and alerts.</p></div><button id="refresh" class="secondary">Refresh records</button></div>
+<p id="status" role="status" aria-live="polite"></p><div id="stats" class="stats"></div>
+<nav class="tabs"><button data-tab="applications">Recruitment</button><button data-tab="leads">Assessment leads</button><button data-tab="notifications">Notifications</button></nav>
+<section id="applications"><h2>Recruitment management</h2><input id="app-search" aria-label="Search applicants" placeholder="Search applicant, vacancy or email" style="max-width:440px;margin-bottom:18px"><div id="application-list"></div></section>
+<section id="leads" hidden><h2>HR assessment leads</h2><input id="lead-search" aria-label="Search businesses" placeholder="Search business, contact or email" style="max-width:440px;margin-bottom:18px"><div id="lead-list"></div></section>
+<section id="notifications" hidden><h2>Notification history</h2><div id="notification-list"></div></section>
+<p class="muted">Only authorised staff can access these records. Follow-up reminders are visible when this dashboard is opened; they do not send scheduled email reminders automatically. Assessment PDFs remain available from the main Admin Dashboard.</p>
+</main>
+<script>
+(()=>{'use strict';
+const API='https://eugqokfxwucusniamxvm.supabase.co/functions/v1/admin-operations';
+const HR_API='https://eugqokfxwucusniamxvm.supabase.co/functions/v1/hr-assessments';
+const token=localStorage.getItem('tnr_admin_token'),expiry=Number(localStorage.getItem('tnr_admin_expires')||0);
+if(!token||Date.now()>expiry){location.replace('login.html');return;}
+const $=s=>document.querySelector(s),escape=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const dt=v=>v?new Date(v).toLocaleString('en-ZA',{dateStyle:'medium',timeStyle:'short'}):'—';
+const localdt=v=>v?new Date(v).toISOString().slice(0,16):'';
+let store={applications:[],leads:[],notifications:[],staff:[],permissions:{}},tab='applications';
+const setStatus=(text,error=false)=>{$('#status').textContent=text;$('#status').className=error?'error':'success'};
+async function call(action,data={}){
+ const response=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action,adminToken:token,...data})});
+ const result=await response.json();if(!response.ok||!result.success)throw Error(result.message||'Request failed');return result;
+}
+async function reload(){
+ $('#refresh').disabled=true;setStatus('Loading records...');
+ try{store=await call('dashboard');render();setStatus('Records loaded securely.');}
+ catch(e){setStatus(e.message,true);if(/session|login|permission/i.test(e.message))setTimeout(()=>location.replace('login.html'),1300);}
+ finally{$('#refresh').disabled=false;}
+}
+function staffOptions(selected){return '<option value="">Unassigned</option>'+store.staff.map(a=>'<option value="'+escape(a.id)+'" '+(selected===a.id?'selected':'')+'>'+escape(a.display_name||a.username)+' ('+escape(a.role)+')</option>').join('')}
+function selectOptions(values,selected){return values.map(v=>'<option value="'+escape(v)+'" '+(v===selected?'selected':'')+'>'+escape(v.replaceAll('_',' '))+'</option>').join('')}
+const statuses=['new','reviewed','shortlisted','interview','rejected','hired'],verify=['not_started','pending','verified','flagged'],leads=['new','contacted','consultation_booked','proposal_sent','converted','closed'];
+function appCard(a){const duplicate=a.possible_duplicate_of||a.duplicate_of;
+ return '<article class="card" data-application="'+escape(a.id)+'"><div class="row"><div><strong>'+escape(a.full_name)+'</strong><div class="data">'+escape(a.vacancy_title)+' · '+escape(a.email)+' · '+escape(a.phone||'No phone')+'</div><p class="muted">Applied '+dt(a.created_at)+(duplicate?' · <span class="tag warn">Possible duplicate #'+escape(duplicate)+'</span>':'')+'</p></div><span class="tag">'+escape(a.status)+'</span></div><details><summary>Manage application</summary><div class="grid" style="margin-top:14px"><label>Stage<select data-field="status">'+selectOptions(statuses,a.status)+'</select></label><label>Qualification verification<select data-field="verification_status">'+selectOptions(verify,a.verification_status||'not_started')+'</select></label><label>Assigned staff<select data-field="assigned_to">'+staffOptions(a.assigned_to)+'</select></label><label>Interview date & time<input type="datetime-local" data-field="interview_at" value="'+escape(localdt(a.interview_at))+'"></label></div><label style="margin-top:12px">Internal notes<textarea data-field="notes">'+escape(a.notes||'')+'</textarea></label><div class="actions"><button data-action="save-application">Save application</button><a class="btn secondary" href="admin.html">Open admin for CV</a></div></details></article>';
+}
+function leadCard(a){const overdue=a.follow_up_at&&new Date(a.follow_up_at).getTime()<Date.now()&&!['converted','closed'].includes(a.lead_status);
+ return '<article class="card" data-lead="'+escape(a.id)+'"><div class="row"><div><strong>'+escape(a.business_name)+'</strong><div class="data">'+escape(a.contact_name)+' · '+escape(a.email)+' · '+escape(a.phone||'')+'</div><p class="muted">'+escape(a.recommendation)+' · Score '+escape(a.score)+'/29 · Submitted '+dt(a.created_at)+'</p></div><div><span class="tag">'+escape(a.lead_status||'new')+'</span> '+(overdue?'<span class="tag warn">Follow-up overdue</span>':'')+'</div></div><details><summary>Manage consultation lead</summary><div class="grid" style="margin-top:14px"><label>Lead stage<select data-field="lead_status">'+selectOptions(leads,a.lead_status||'new')+'</select></label><label>Assigned staff<select data-field="assigned_to">'+staffOptions(a.assigned_to)+'</select></label><label>Follow-up date<input type="datetime-local" data-field="follow_up_at" value="'+escape(localdt(a.follow_up_at))+'"></label><label>Business email alert<div style="padding:10px 0">'+escape(a.email_status||'pending')+'</div></label></div><label style="margin-top:12px">Consultation notes<textarea data-field="internal_notes">'+escape(a.internal_notes||'')+'</textarea></label><div class="actions"><button data-action="save-lead">Save lead</button>'+(a.email_status!=='sent'?'<button class="secondary" data-action="retry-email">Retry business email</button>':'')+'<a href="admin.html" class="btn secondary">PDF in admin</a></div></details></article>';
+}
+function render(){
+ $('#stats').innerHTML=[['Candidates',store.applications.length],['Assessment leads',store.leads.length],['Unread alerts',store.notifications.filter(n=>!n.is_read).length],['Pending follow-ups',store.leads.filter(a=>a.follow_up_at&&new Date(a.follow_up_at)<new Date()&&!['converted','closed'].includes(a.lead_status)).length]].map(x=>'<div class="stat"><span class="muted">'+x[0]+'</span><strong>'+x[1]+'</strong></div>').join('');
+ const q1=$('#app-search').value.toLowerCase(),q2=$('#lead-search').value.toLowerCase();
+ $('#application-list').innerHTML=store.permissions.recruit?(store.applications.filter(a=>(a.full_name+' '+a.email+' '+a.vacancy_title).toLowerCase().includes(q1)).map(appCard).join('')||'<div class="card">No candidates found.</div>'):'<div class="card">Recruitment access restricted.</div>';
+ $('#lead-list').innerHTML=store.permissions.hr?(store.leads.filter(a=>(a.business_name+' '+a.email+' '+a.contact_name).toLowerCase().includes(q2)).map(leadCard).join('')||'<div class="card">No HR assessment leads found.</div>'):'<div class="card">Assessment lead access restricted.</div>';
+ $('#notification-list').innerHTML=store.notifications.map(n=>'<article class="card" data-notification="'+escape(n.id)+'"><div class="row"><div><strong>'+escape(n.title)+'</strong><p class="data">'+escape(n.message||'')+'</p><span class="muted">'+dt(n.created_at)+'</span></div>'+(n.is_read?'<span class="tag">Read</span>':'<button data-action="read-notification">Mark read</button>')+'</div></article>').join('')||'<div class="card">No notifications found.</div>';
+ document.querySelectorAll('section[id]').forEach(s=>s.hidden=s.id!==tab);
+ document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
+}
+async function save(type,el){
+ const fields={};el.querySelectorAll('[data-field]').forEach(x=>fields[x.dataset.field]=x.value||null);
+ const id=type==='application'?Number(el.dataset.application):el.dataset.lead;
+ if(type==='application'&&fields.notes===null)fields.notes='';
+ if(type==='lead'&&fields.internal_notes===null)fields.internal_notes='';
+ for(const fld of ['interview_at','follow_up_at'])if(fields[fld])fields[fld]=new Date(fields[fld]).toISOString();
+ await call(type==='application'?'application_update':'lead_update',{id,...fields});
+ setStatus('Changes saved.');await reload();
+}
+document.addEventListener('click',async e=>{
+ const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.tab){tab=b.dataset.tab;render();return;}
+ if(!b.dataset.action)return;
+ b.disabled=true;
+ try{
+  if(b.dataset.action==='save-application')await save('application',b.closest('[data-application]'));
+  if(b.dataset.action==='save-lead')await save('lead',b.closest('[data-lead]'));
+  if(b.dataset.action==='read-notification'){await call('notification_read',{id:Number(b.closest('[data-notification]').dataset.notification)});await reload();}
+  if(b.dataset.action==='retry-email'){
+    const id=b.closest('[data-lead]').dataset.lead;
+    const res=await fetch(HR_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'retry_email',adminToken:token,id})});
+    const d=await res.json();if(!res.ok||!d.success)throw Error(d.message||'Email retry failed');setStatus('Notification accepted by email provider.');await reload();
+  }
+ }catch(err){setStatus(err.message,true);}finally{b.disabled=false;}
+});
+$('#refresh').onclick=reload;$('#app-search').oninput=render;$('#lead-search').oninput=render;reload();
+})();
+</script></body></html>
