@@ -30,7 +30,7 @@ async function call(action,data={}){
 }
 async function reload(){
  $('#refresh').disabled=true;setStatus('Loading records...');
- try{store=await call('dashboard');render();setStatus('Records loaded securely.');}
+ try{store=await call('dashboard');render();setStatus(store.emailConfigured?'Records loaded securely.':'Records loaded. Email service configuration has not been verified; check Resend settings.',!store.emailConfigured);}
  catch(e){setStatus(e.message,true);if(/session|login|permission/i.test(e.message))setTimeout(()=>location.replace('login.html'),1300);}
  finally{$('#refresh').disabled=false;}
 }
