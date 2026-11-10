@@ -1,0 +1,29 @@
+(()=>{'use strict';
+const qs=window.TNR_HR_QUESTIONS, answers={}, $=id=>document.getElementById(id);
+if(!qs||!$('hr-assessment'))return;
+let pos=0,done=false,captchaWidget=null;
+const API='https://eugqokfxwucusniamxvm.supabase.co/functions/v1/hr-assessments';
+const copy={
+ 'Start-up':'Your responses suggest that your business would benefit from establishing essential HR systems, employment documentation and practical compliance guidance.',
+ 'Growing Business':'Your responses indicate a need for consistent HR management, administration, employee relations and compliance support through an outsourced HR department.',
+ 'Established Business':'Your responses suggest that specialist HR and labour relations services may complement your existing internal HR capability.'};
+function track(name){if(typeof window.gtag==='function')try{window.gtag('event',name,{page_location:location.pathname});}catch{}}
+function display(){const q=qs[pos];$('hr-step-label').textContent=`Question ${pos+1} of ${qs.length}`;$('hr-progress').setAttribute('aria-valuenow',String(pos+1));$('hr-progress-bar').style.width=100*(pos+1)/qs.length+'%';$('hr-question-title').textContent=q.question;const box=$('hr-question-options');box.replaceChildren();for(const o of q.answers){const label=document.createElement('label');label.className='hr-assessment-option';const input=document.createElement('input');input.type='radio';input.name='hr_answer_'+q.number;input.value=o.id;input.checked=answers[q.number]===o.id;input.onchange=()=>{answers[q.number]=o.id;$('hr-next').disabled=false;};const span=document.createElement('span');span.textContent=`${o.id}. ${o.text}`;label.append(input,span);box.appendChild(label);}$('hr-prev').disabled=pos===0;$('hr-next').disabled=!answers[q.number];$('hr-next').textContent=pos===11?'See My Result':'Next';}
+function result(){const score=qs.reduce((sum,q)=>sum+(q.number<=2?0:q.answers.find(a=>a.id===answers[q.number]).points),0);let pkg;if(answers[11]==='D'||(answers[3]==='D'&&!['B','C'].includes(answers[11])))pkg='Established Business';else if(answers[11]==='A'&&answers[12]==='A'&&score<=12)pkg='Start-up';else pkg='Growing Business';const review=answers[1]==='D'||(answers[3]==='D'&&['B','C'].includes(answers[11]));return {score,recommendation:pkg,review};}
+$('hr-next').onclick=()=>{if(!answers[qs[pos].number])return;if(pos<11){pos++;display();return;}if(done)return;done=true;const r=result();$('hr-assessment-steps').hidden=true;$('hr-result').hidden=false;$('hr-result-title').textContent=r.recommendation+' Package';$('hr-result-desc').textContent=copy[r.recommendation];$('hr-result-score').textContent=`Assessment score: ${r.score} / 29`;$('hr-manual-review').hidden=!r.review;$('hr-headcount').value=qs[0].answers.find(x=>x.id===answers[1]).text;initCaptcha();track('assessment_complete');$('hr-result').scrollIntoView({behavior:'smooth',block:'start'});};
+$('hr-prev').onclick=()=>{if(pos){pos--;display();}};
+function initCaptcha(){
+ const key=String(window.TNR_TURNSTILE_SITE_KEY||'').trim();
+ const container=$('hr-captcha-container');
+ if(!key||!container||captchaWidget!==null)return;
+ function render(){if(window.turnstile&&captchaWidget===null)captchaWidget=window.turnstile.render(container,{sitekey:key,theme:'auto'});}
+ if(window.turnstile){render();return;}
+ window.onTNRTurnstileReady=render;
+ const script=document.createElement('script');script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTNRTurnstileReady&render=explicit';script.async=true;script.defer=true;document.head.appendChild(script);
+}
+$('hr-consult-form').onsubmit=async(e)=>{e.preventDefault();if(!done)return;const form=e.currentTarget;if(!form.reportValidity())return;const fd=new FormData(form);if(fd.get('website'))return;
+const siteKey=String(window.TNR_TURNSTILE_SITE_KEY||'').trim();
+const captchaToken=siteKey&&window.turnstile&&captchaWidget!==null?window.turnstile.getResponse(captchaWidget):'';
+if(siteKey&&!captchaToken){$('hr-submit-feedback').textContent='Please complete the security verification before sending.';return;}const btn=$('hr-submit'),feedback=$('hr-submit-feedback'),r=result();btn.disabled=true;feedback.textContent='Sending your consultation request…';feedback.className='hr-assessment-alert';const params=new URLSearchParams(location.search);const attribution={};for(const key of ['utm_source','utm_medium','utm_campaign','utm_content','utm_term']){if(params.has(key))attribution[key]=params.get(key).slice(0,150);}try{const response=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'submit',answers:Object.fromEntries(qs.map(q=>[String(q.number),answers[q.number]])),business_name:fd.get('business_name'),contact_name:fd.get('contact_name'),email:fd.get('email'),phone:fd.get('phone'),industry:fd.get('industry'),province:fd.get('province'),employee_headcount:fd.get('employee_headcount'),consultation_consent:fd.get('consultation_consent')==='on',marketing_opt_in:fd.get('marketing_opt_in')==='on',attribution,turnstile_token:captchaToken,website:fd.get('website')})});let data={};try{data=await response.json();}catch{}if(!response.ok||!data.success)throw new Error(data.message||'Could not submit right now. Please try again.');feedback.className='hr-assessment-alert';feedback.textContent=`Thank you. Your assessment has been submitted successfully. Reference: ${data.reference}. TNR HR will follow up about your consultation.`;form.querySelectorAll('input,select,button').forEach(el=>el.disabled=true);track('consultation_request');}catch(err){feedback.className='hr-assessment-alert error';feedback.textContent=err.message;btn.disabled=false;if(siteKey&&window.turnstile&&captchaWidget!==null)window.turnstile.reset(captchaWidget);}};
+display();track('assessment_start');
+})();
