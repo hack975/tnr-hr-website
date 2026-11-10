@@ -13,7 +13,7 @@
   <title>Info Hub | TNR HR Business Solutions</title>
   <meta name="description" content="Latest vacancies and HR opportunities from TNR HR Business Solutions. Legal Advisor positions available at a Gender-Based Violence NPO in Gugulethu, Cape Town.">
   <meta name="keywords" content="HR information hub, HR insights, compliance updates, South Africa, TNR HR">
-  <link rel="canonical" href="https://tnrhrbs.co.za/newsletter.html">
+  <link rel="canonical" href="https://tnrconsulting.co.za/newsletter.html">
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -143,7 +143,7 @@
           <i class="ri-error-warning-line flex-shrink-0"></i><span id="signup-error-msg"></span>
         </div>
         <button type="submit" id="signup-btn" class="w-full text-[0.7rem] font-sans tracking-[0.2em] uppercase px-6 py-4 bg-primary-500 text-background-50 hover:bg-primary-600 transition-all duration-500 disabled:opacity-50 flex items-center justify-center gap-2">
-          <span>Subscribe Now</span>
+          <span>Subscribe to Info Hub</span>
         </button>
       </form>
     </div>
@@ -243,76 +243,32 @@
 })();
 </script>
 <script>
-// Newsletter signup
-(function() {
-  const FORM_URL = 'https://readdy.ai/api/form/d9jgjm8h9dsfbuoi61hg';
-  const form = document.getElementById('signup-form');
-  const successDiv = document.getElementById('signup-success');
-  const errorDiv = document.getElementById('signup-error');
-  const errorMsg = document.getElementById('signup-error-msg');
-  const btn = document.getElementById('signup-btn');
-
-  window.resetSignup = function() {
-    form.reset();
-    form.style.display = '';
-    successDiv.classList.add('hidden');
-    errorDiv.classList.add('hidden');
-  };
-
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const formData = new FormData(form);
-    const email = formData.get('email');
-    const name = formData.get('name');
-
-    if (!email || !name) {
-      errorMsg.textContent = 'Please fill in all required fields.';
-      errorDiv.classList.remove('hidden');
-      return;
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      errorMsg.textContent = 'Please enter a valid email address.';
-      errorDiv.classList.remove('hidden');
-      return;
-    }
-
-    errorDiv.classList.add('hidden');
-    btn.innerHTML = '<i class="ri-loader-4-line animate-spin"></i><span>Subscribing...</span>';
-    btn.disabled = true;
-
-    try {
-      await window.handleFormSubmit(form, FORM_URL);
-      // Save to localStorage for admin dashboard
-      try {
-        var cached = localStorage.getItem('tnr_newsletter_subscribers');
-        var subscribers = cached ? JSON.parse(cached) : [];
-        subscribers.push({ name: name, email: email, date: new Date().toISOString() });
-        if (subscribers.length > 100) subscribers.shift();
-        localStorage.setItem('tnr_newsletter_subscribers', JSON.stringify(subscribers));
-        var count = parseInt(localStorage.getItem('tnr_newsletter_count') || '0', 10);
-        localStorage.setItem('tnr_newsletter_count', String(count + 1));
-      } catch(e) { /* ignore */ }
-      // Also save to Supabase database directly
-      try {
-        var supabaseSub = window.supabase.createClient(
-          'https://eugqokfxwucusniamxvm.supabase.co',
-          'sb_publishable_8p9-6czzRXPx5rS2BwiZGg_QGz3RWeM'
-        );
-        supabaseSub.from('subscribers').insert({
-          name: name,
-          email: email
-        }).catch(function() {});
-      } catch(e) { /* ignore */ }
-      form.style.display = 'none';
-      successDiv.classList.remove('hidden');
-      btn.innerHTML = '<span>Subscribe Now</span>';
-      btn.disabled = false;
-    } catch(err) {
-      errorMsg.textContent = err.message || 'Something went wrong. Please try again.';
-      errorDiv.classList.remove('hidden');
-      btn.innerHTML = '<span>Subscribe Now</span>';
-      btn.disabled = false;
-    }
+(function(){
+  const form=document.getElementById('signup-form');
+  if(!form)return;
+  const success=document.getElementById('signup-success');
+  const error=document.getElementById('signup-error');
+  const msg=document.getElementById('signup-error-msg');
+  const btn=document.getElementById('signup-btn');
+  const initial=btn.innerHTML;
+  window.resetSignup=function(){form.reset();form.style.display='';success.classList.add('hidden');error.classList.add('hidden');};
+  form.addEventListener('submit',async function(event){
+    event.preventDefault();
+    const fd=new FormData(form),name=String(fd.get('name')||'').trim(),email=String(fd.get('email')||'').trim();
+    const newsletter=Boolean(fd.get('newsletter')),job_alerts=Boolean(fd.get('job_alerts'));
+    if(!name||!/^\S+@\S+\.\S+$/.test(email)){msg.textContent='Please enter valid details and required preferences.';error.classList.remove('hidden');return;}
+    error.classList.add('hidden');btn.disabled=true;btn.textContent='Saving...';
+    try{
+      const response=await fetch('https://eugqokfxwucusniamxvm.supabase.co/functions/v1/public-signup',{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({action:'info_hub',name,email,newsletter,job_alerts,website:fd.get('website_alt')||fd.get('company_alt')||''})
+      });
+      const data=await response.json();
+      if(!response.ok||!data.success)throw new Error(data.message||'Unable to save. Please try again.');
+      form.style.display='none';success.classList.remove('hidden');
+      if(data.alreadyRegistered)success.textContent=data.message;
+    }catch(e){msg.textContent=e.message||'Unable to save. Please try again.';error.classList.remove('hidden');}
+    finally{btn.disabled=false;btn.innerHTML=initial;}
   });
 })();
 </script>
