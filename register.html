@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://readdy.ai">
   <link rel="icon" type="image/png" href="favicon.png">
   <title>Stay Connected | TNR HR Business Solutions</title>
-  <meta name="description" content="Register to receive the TNR HR monthly newsletter and be notified about new job opportunities.">
-  <link rel="canonical" href="https://tnrhrbs.co.za/register.html">
+  <meta name="description" content="Register to receive the TNR HR Info Hub updates and be notified about new job opportunities.">
+  <link rel="canonical" href="https://tnrconsulting.co.za/register.html">
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -80,7 +80,7 @@
   <div class="page-hero-content">
     <span style="display:block;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.90);margin-bottom:1rem;text-shadow:0 1px 6px rgba(0,0,0,0.6);">Register</span>
     <h1 style="font-size:clamp(1.8rem,4vw,3.5rem);color:#ffffff;font-weight:300;line-height:1.2;text-shadow:0 2px 16px rgba(0,0,0,0.7),0 1px 4px rgba(0,0,0,0.5);margin-bottom:1rem;">Stay Connected</h1>
-    <p style="font-size:clamp(0.9rem,1.5vw,1.1rem);color:rgba(255,255,255,0.90);max-width:42rem;margin:0 auto;line-height:1.7;text-shadow:0 1px 8px rgba(0,0,0,0.6);">Register to receive our monthly newsletter and get notified about new job opportunities.</p>
+    <p style="font-size:clamp(0.9rem,1.5vw,1.1rem);color:rgba(255,255,255,0.90);max-width:42rem;margin:0 auto;line-height:1.7;text-shadow:0 1px 8px rgba(0,0,0,0.6);">Register to receive our Info Hub updates and get notified about new job opportunities.</p>
   </div>
 </section>
 
@@ -96,7 +96,7 @@
           <div class="flex items-start gap-4">
             <div class="w-10 h-10 flex items-center justify-center bg-primary-100 rounded-full flex-shrink-0"><i class="ri-newspaper-line text-lg text-primary-500"></i></div>
             <div>
-              <p class="text-sm font-sans font-medium text-foreground-950 mb-1">Monthly Newsletter</p>
+              <p class="text-sm font-sans font-medium text-foreground-950 mb-1">Info Hub Updates</p>
               <p class="text-sm text-foreground-600 leading-relaxed">Expert HR insights, labour law updates, compliance tips, and industry news delivered monthly.</p>
             </div>
           </div>
@@ -147,7 +147,7 @@
               <label class="flex items-start gap-3 cursor-pointer group">
                 <input type="checkbox" name="newsletter" class="mt-0.5 w-4 h-4 cursor-pointer" checked>
                 <div>
-                  <p class="text-sm text-foreground-950 group-hover:text-primary-500 transition-colors">Monthly Newsletter</p>
+                  <p class="text-sm text-foreground-950 group-hover:text-primary-500 transition-colors">Info Hub Updates</p>
                   <p class="text-xs text-foreground-500 mt-0.5">HR insights, compliance updates, and industry news</p>
                 </div>
               </label>
@@ -237,78 +237,32 @@
 
 <script src="js/main.js" defer></script>
 <script>
-(function() {
-  const FORM_URL = 'https://readdy.ai/api/form/d9gsdncoq4dpg2lrmsb0';
-  const form = document.getElementById('register-form');
-  const successDiv = document.getElementById('reg-success');
-  const errorDiv = document.getElementById('reg-error');
-  const errorMsg = document.getElementById('reg-error-msg');
-  const btn = document.getElementById('reg-btn');
-
-  window.resetReg = function() {
-    form.reset();
-    form.style.display = '';
-    successDiv.classList.add('hidden');
-    errorDiv.classList.add('hidden');
-  };
-
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const formData = new FormData(form);
-    const email = formData.get('email');
-    const name = formData.get('name');
-    const newsletter = formData.get('newsletter');
-    const jobAlerts = formData.get('job_alerts');
-
-    if (!email || !name) { errorMsg.textContent = 'Please fill in all required fields.'; errorDiv.classList.remove('hidden'); return; }
-    if (!newsletter && !jobAlerts) { errorMsg.textContent = 'Please select at least one subscription option.'; errorDiv.classList.remove('hidden'); return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errorMsg.textContent = 'Please enter a valid email address.'; errorDiv.classList.remove('hidden'); return; }
-
-    errorDiv.classList.add('hidden');
-    btn.innerHTML = '<i class="ri-loader-4-line animate-spin"></i><span>Registering...</span>';
-    btn.disabled = true;
-
-    try {
-      await window.handleFormSubmit(form, FORM_URL);
-      // Save to localStorage for admin dashboard
-      try {
-        var cached = localStorage.getItem('tnr_registrations');
-        var registrations = cached ? JSON.parse(cached) : [];
-        registrations.push({
-          name: name,
-          email: email,
-          newsletter: newsletter ? true : false,
-          jobAlerts: jobAlerts ? true : false,
-          date: new Date().toISOString()
-        });
-        if (registrations.length > 100) registrations.shift();
-        localStorage.setItem('tnr_registrations', JSON.stringify(registrations));
-        var count = parseInt(localStorage.getItem('tnr_registration_count') || '0', 10);
-        localStorage.setItem('tnr_registration_count', String(count + 1));
-      } catch(e) { /* ignore */ }
-      // Also save to Supabase database directly
-      try {
-        var supabaseReg = window.supabase.createClient(
-          'https://eugqokfxwucusniamxvm.supabase.co',
-          'sb_publishable_8p9-6czzRXPx5rS2BwiZGg_QGz3RWeM'
-        );
-        supabaseReg.from('registrations').insert({
-          name: name,
-          email: email,
-          newsletter: newsletter ? true : false,
-          job_alerts: jobAlerts ? true : false
-        }).catch(function() {} );
-      } catch(e) { /* ignore */ }
-      form.style.display = 'none';
-      successDiv.classList.remove('hidden');
-      btn.innerHTML = '<span>Register Now</span>';
-      btn.disabled = false;
-    } catch(err) {
-      errorMsg.textContent = err.message || 'Something went wrong. Please try again.';
-      errorDiv.classList.remove('hidden');
-      btn.innerHTML = '<span>Register Now</span>';
-      btn.disabled = false;
-    }
+(function(){
+  const form=document.getElementById('register-form');
+  if(!form)return;
+  const success=document.getElementById('reg-success');
+  const error=document.getElementById('reg-error');
+  const msg=document.getElementById('reg-error-msg');
+  const btn=document.getElementById('reg-btn');
+  const initial=btn.innerHTML;
+  window.resetReg=function(){form.reset();form.style.display='';success.classList.add('hidden');error.classList.add('hidden');};
+  form.addEventListener('submit',async function(event){
+    event.preventDefault();
+    const fd=new FormData(form),name=String(fd.get('name')||'').trim(),email=String(fd.get('email')||'').trim();
+    const newsletter=Boolean(fd.get('newsletter')),job_alerts=Boolean(fd.get('job_alerts'));
+    if(!name||!/^\S+@\S+\.\S+$/.test(email)||(!newsletter&&!job_alerts)){msg.textContent='Please enter valid details and required preferences.';error.classList.remove('hidden');return;}
+    error.classList.add('hidden');btn.disabled=true;btn.textContent='Saving...';
+    try{
+      const response=await fetch('https://eugqokfxwucusniamxvm.supabase.co/functions/v1/public-signup',{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({action:'registration',name,email,newsletter,job_alerts,website:fd.get('website_alt')||fd.get('company_alt')||''})
+      });
+      const data=await response.json();
+      if(!response.ok||!data.success)throw new Error(data.message||'Unable to save. Please try again.');
+      form.style.display='none';success.classList.remove('hidden');
+      if(data.alreadyRegistered)success.textContent=data.message;
+    }catch(e){msg.textContent=e.message||'Unable to save. Please try again.';error.classList.remove('hidden');}
+    finally{btn.disabled=false;btn.innerHTML=initial;}
   });
 })();
 </script>
